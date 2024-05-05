@@ -72,6 +72,7 @@ body{
     padding: 5px;
     padding-left: 40px;
     margin-right: 40px;
+    color: black;
     
 }
 #form:hover{
@@ -350,6 +351,10 @@ E-market
   margin-right: 20px;
   margin-bottom: 3px;
 }
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
 
 #cart {
   color: #fff;
@@ -369,7 +374,7 @@ E-market
 input, button{ 
   border:none; 
   background-color: rgba(0, 0, 0, 0);
-  color: #eee;
+  color: black;
   text-decoration: none;
   margin-left: 20px;
 } 
@@ -460,7 +465,7 @@ Loan Calculator
         /*prevent it from adding a white space between carousel and container elements*/
         height:auto
         width: 60%;
-        align-self : center;
+        align-self: center;
     }    
     /*Home Page*/
     .Logo .TeamName{

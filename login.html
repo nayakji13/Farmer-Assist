@@ -1,31 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Farmer Login</title>
-    <link rel="icon" href="Images/14.png">
-    <link rel="stylesheet" href="login.css">
-
-</head>
-<body>
+    <link rel="icon" href="Images/14.png" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
     <div class="container">
-        <h2>Farmer Login</h2>
-        <form action="#" method="post">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">Login</button>
-        </form>
+      <h2>Farmer Login</h2>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        
+        <p>Dont have an Account! <a href="Registr.html">Click Here</a>
+        </a>
+    </p>
+        <button type="submit">Login</button>
+      </form>
     </div>
 
-    <script src="script.js"> </script>
-</body>
+    <!-- <script src="script.js"> </script> -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+      import {
+        getDatabase,
+        set,
+        ref,
+        update,
+      } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC8QVEye48MnK0WjgQ2ymdkOVPBXNsCkdM",
+        authDomain: "farmer-assist-844d5.firebaseapp.com",
+        projectId: "farmer-assist-844d5",
+        storageBucket: "farmer-assist-844d5.appspot.com",
+        messagingSenderId: "1020287941616",
+        appId: "1:1020287941616:web:9a4bbb5c0b1a50378bfb35",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth();
+      const database = getDatabase(app);
+
+      document
+        .querySelector("form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission from reloading the page
+
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+
+          // createUserWithEmailAndPassword(auth, email, password)
+          //   .then((userCredential) => {
+          //     // Signed up
+          //     const user = userCredential.user;
+          //     // ...
+          //     set(ref(database, "users/" + user.uid), {
+          //       email: email,
+          //       password: password
+
+          //       // profile_picture: imageUrl,
+          //     })
+          //       .then(() => {
+          //         // Data saved successfully!
+          //         alert("User created successfully");
+          //         window.location.href = "login.html";
+          //       })
+          //       .catch((error) => {
+          //         // The write failed...
+          //         alert(error);
+          //       });
+          //   })
+          //   .catch((error) => {
+          //     const errorCode = error.code;
+          //     const errorMessage = error.message;
+          //     // ..
+          //     alert(errorMessage);
+          //   });
+
+          signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+              // Signed in
+              const user = userCredential.user;
+              // ...
+              var lgdate = new Date();
+              update(ref(database, "users/" + user.uid), {
+                last_login: lgdate,
+
+                // profile_picture: imageUrl,
+              })
+                .then(() => {
+                  // Data saved successfully!
+                  alert("User Loggedin successfully");
+
+                  window.location.href = "index.html";
+                  document.getElementById("loginButton").style.display = "none";
+                  document.getElementById("registerButton").style.display =
+                    "none";
+
+                  // Show profile button
+                  document.getElementById("profileButton").style.display =
+                    "inline-block";
+                })
+                .catch((error) => {
+                  // The write failed...
+                  alert(error);
+                });
+            })
+            .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              alert(errorMessage);
+            });
+        });
+    </script>
+  </body>
 </html>
-
-
