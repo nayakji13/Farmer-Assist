@@ -1,67 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Icon -->
-        <link rel="icon" href="../Images/14.png">
+    <!-- Icon -->
+    <link rel="icon" href="../Images/14.png" />
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        
-       <!-- CSS Linked -->
-       <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Rubik:ital,wght@0,500;1,600&family=Shadows+Into+Light&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-       <link rel="stylesheet" type="text/css" href="../CSS/Style.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
 
-       <title>Farmer Assist</title>
-    </head>
-    <body>
+    <!-- CSS Linked -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Rubik:ital,wght@0,500;1,600&family=Shadows+Into+Light&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../CSS/Style.css" />
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg  sticky-top navbar-custom">
-            <span class="navbar-brand">
-                <img src="../Images/14.png" alt="logo">  
-            </span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="nav-burger">
-                    <img src="../Logo/nav-btn.png">
-                </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link pt-3" href="../index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown  active">
-                        <a class="nav-link pt-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Schemes
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="Category1.html">Insurance</a>
-                            <a class="dropdown-item" href="Category2.html">Financial Support</a>
-                            <a class="dropdown-item" href="Category3.html">Crop Field</a>
-                                <a class="dropdown-item" href="Category4.html">Sustainable Dev</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pt-3" href="MSP.html">MSP</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pt-3" href="EMarketing.html">Krishi-Kshetra</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pt-3" href="LoanCalculator.html">Loan-Calc</a>
-                        </li>
-                    </ul>
-                    <form id="form"> 
-                        <input type="search" id="query" name="q" placeholder="">
-                        <button class="Search" onclick="search(event)">Search</button>
-
-                    </form>
-                    <!-- <a href="login.html"><button type="button" class="btn btn-outline-primary mx-1">Log In</button></a>
-                    <a href="Registr.html"><button type="button" class="btn btn-outline-secondary mx-1">Register</button></a> -->
-                
+    <title>Farmer Assist</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
+      <span class="navbar-brand">
+        <img src="../Images/14.png" alt="logo" />
+      </span>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+        aria-controls="navbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="nav-burger">
+          <img src="../Logo/nav-btn.png" />
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link pt-3" href="../index.html"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item dropdown active">
+            <a
+              class="nav-link pt-3 dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Schemes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="Category1.html">Insurance</a>
+              <a class="dropdown-item" href="Category2.html"
+                >Financial Support</a
+              >
+              <a class="dropdown-item" href="Category3.html">Crop Field</a>
+              <a class="dropdown-item" href="Category4.html">Sustainable Dev</a>
             </div>
-        </nav>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pt-3" href="MSP.html">MSP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pt-3" href="EMarketing.html">Krishi-Kshetra</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pt-3" href="LoanCalculator.html">Loan-Calc</a>
+          </li>
+        </ul>
+        <form id="form">
+          <input type="search" id="query" name="q" placeholder="" />
+          <button class="Search" onclick="search(event)">Search</button>
+        </form>
+        <!-- <a href="login.html"><button type="button" class="btn btn-outline-primary mx-1">Log In</button></a>
+                    <a href="Registr.html"><button type="button" class="btn btn-outline-secondary mx-1">Register</button></a> -->
+      </div>
+    </nav>
+
+            <!--Content-->
+            <!-- ============================================================== 
+              Dont do anything over here still some functionality os left
+            ================================================================= -->
+
+            <div class="container">
+              <h1 id="cart">Shopping Cart</h1>
+              <div class="pt-5 row" id="cart-items">
+                  <!-- Cart items will be dynamically added here -->
+              </div>
+              <div id="checkout">
+                  <hr>
+                  <div>Total: &#8377;<span id="total-price"></span></div>
+                  <button class="btn btn-success mt-3" onclick="checkout()">Checkout</button>
+              </div>
+          </div>
+      </div>
+  </body>
+
+  <!-- ==================================================================
+  Dont touch this function
+========================================================================= -->
+  <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    displayCart();
+});
+
+function displayCart() {
+    var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    var cartContainer = document.getElementById('cart-items');
+    var totalPrice = 0;
+
+    if (cartItems.length === 0) {
+        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+    } else {
+        var cartHTML = '';
+        cartItems.forEach(function (item, index) {
+            cartHTML += '<div class="col-sm-4">';
+            cartHTML += '<div class="card">';
+            cartHTML += '<div class="card-body">';
+            cartHTML += '<h5 class="card-title">' + item.product + '</h5>';
+            cartHTML += '<p class="card-text">Price: &#8377;' + item.price + '</p>';
+            cartHTML += '<button class="btn btn-danger" onclick="clearCartItem(' + index + ')">Clear Item</button>';
+            cartHTML += '</div>';
+            cartHTML += '</div>';
+            cartHTML += '</div>';
+
+            totalPrice += parseFloat(item.price);
+        });
+        cartContainer.innerHTML = cartHTML;
+        document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+    }
+}
+
+function checkout() {
+    $('#paymentModal').modal('show');
+}
+
+function processPayment() {
+    var selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+    // Depending on the selected payment method, you can redirect the user to the respective payment gateway or handle it accordingly.
+    switch (selectedPaymentMethod) {
+        case 'upi':
+            // Redirect to UPI payment gateway
+            break;
+        case 'card':
+            // Redirect to card payment gateway
+            break;
+        case 'netbanking':
+            // Redirect to net banking payment gateway
+            break;
+        default:
+            // Handle default case
+            break;
+    }
+
+    // Close the modal after processing payment
+    $('#paymentModal').modal('hide');
+}
+
+
+
+function clearCartItem(index) {
+    var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    cartItems.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    displayCart(); 
+}
+</script>
+</html>
