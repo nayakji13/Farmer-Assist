@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (registerForm) {
         registerForm.addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent form submission
-            // You can perform form validation here
+            // You can perform form validation her
             // Example: Check if fields are not empty
             var name = document.getElementById("name").value;
             var email = document.getElementById("email").value;
